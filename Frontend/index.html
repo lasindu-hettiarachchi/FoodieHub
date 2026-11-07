@@ -1,0 +1,262 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieHub | Delicious Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Foodie<span>Hub.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="cart-btn" onclick="showCart()">
+                🛒 Cart (<span id="cart-count">0</span>)
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="subtitle">WELCOME TO FOODIEHUB</p>
+
+            <h1>
+                Delicious Food,<br>
+                Delivered To <span>Your Door.</span>
+            </h1>
+
+            <p class="hero-description">
+                Fresh ingredients, amazing flavours and delicious meals.
+                Order your favourite food today!
+            </p>
+
+            <a href="#menu" class="order-btn">Explore Menu →</a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900"
+                alt="Delicious burger">
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+
+            <p>WHAT DO YOU WANT?</p>
+
+            <h2>Explore Categories</h2>
+
+        </div>
+
+        <!-- Categories will load from Backend API -->
+
+        <div class="category-container" id="category-container">
+
+            <button class="category-card" onclick="filterFood('All')">
+                🍽️ <span>All</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Food Menu Section -->
+    <section class="menu" id="menu">
+
+        <div class="section-heading">
+
+            <p>OUR SPECIAL MENU</p>
+
+            <h2>Popular Dishes</h2>
+
+        </div>
+
+        <!-- Products will load from Backend API -->
+
+        <div class="food-container" id="food-container">
+
+            <p>Loading delicious food...</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2>Why Choose FoodieHub?</h2>
+
+        <p>
+            We bring delicious food, fresh ingredients and great service
+            together to make every meal special.
+        </p>
+
+    </section>
+
+
+    <!-- Shopping Cart Section -->
+    <section class="shopping-cart" id="cart-section">
+
+        <div class="section-heading">
+
+            <p>YOUR SELECTION</p>
+
+            <h2>Shopping Cart 🛒</h2>
+
+        </div>
+
+        <div id="cart-items">
+            <!-- Cart items will appear here using JavaScript -->
+        </div>
+
+        <div class="cart-summary">
+
+            <h3>Order Summary</h3>
+
+            <div class="summary-row">
+
+                <span>Total Items:</span>
+
+                <span id="total-items">0</span>
+
+            </div>
+
+            <div class="summary-row">
+
+                <span>Total Amount:</span>
+
+                <strong id="total-price">Rs. 0</strong>
+
+            </div>
+
+            <button class="checkout-btn" onclick="goToCheckout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Checkout Section -->
+    <section class="checkout" id="checkout">
+
+        <div class="section-heading">
+
+            <p>ALMOST THERE!</p>
+
+            <h2>Checkout Details</h2>
+
+        </div>
+
+        <form id="checkout-form">
+
+            <div class="form-group">
+
+                <label for="customer-name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="customer-phone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="Enter your phone number"
+                    pattern="[0-9]{10}"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="customer-address">Delivery Address</label>
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Enter your delivery address"
+                    required></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="payment-method">Payment Method</label>
+
+                <select id="payment-method" required>
+
+                    <option value="">Select Payment Method</option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="Card Payment">
+                        Card Payment
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" class="place-order-btn">
+                Place Order
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <h2>FoodieHub.</h2>
+
+        <p>Good food. Good mood. ❤️</p>
+
+        <p>© 2026 FoodieHub. All rights reserved.</p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
